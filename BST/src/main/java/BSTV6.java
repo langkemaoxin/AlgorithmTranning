@@ -1,4 +1,4 @@
-public class BSTV4<E extends Comparable<E>> {
+public class BSTV6<E extends Comparable<E>> {
     private class Node{
         public E e;
         public Node left,right;
@@ -11,7 +11,7 @@ public class BSTV4<E extends Comparable<E>> {
     private Node root;
     private int size;
 
-    public BSTV4(){
+    public BSTV6(){
         root=null;
         size=0;
     }
@@ -74,35 +74,82 @@ public class BSTV4<E extends Comparable<E>> {
         preOrder(node.right);
     }
 
+
+    public void inOrder(){
+        inOrder(root);
+    }
+
+    /**
+     * 中序遍历
+     * 一个很神奇的现象，顺序是从小到大排序的
+     *
+     * 先遍历小的，再遍历大的
+     * @param node
+     */
+    private void inOrder(Node node){
+        if(node==null)return;
+
+        inOrder(node.left);
+        System.out.println(node.e);
+        inOrder(node.right);
+    }
+
+
+
+
+
+    public void afterOrder(){
+        afterOrder(root);
+    }
+
+    //后序遍历
+
+    /**
+     * 应用场景：每一个节点，必须释放完子树信息，才能释放自己
+     * @param node
+     */
+    private void afterOrder(Node node){
+        if(node==null)return;
+
+        afterOrder(node.left);
+        afterOrder(node.right);
+        System.out.println(node.e);
+    }
+
+
+
+    /*
+    在做事之前，先要想好，这里想要的效果是什么然后才动手
+    * */
+
     @Override
     public String toString() {
         StringBuilder res=new StringBuilder();
 
-          res= toString(root,0,res);
+          res= generateTostring(root,0,res);
 
           return res.toString();
     }
 
-    private StringBuilder toString(Node node,int detpth,StringBuilder res){
-
-        res=buildDetpth(detpth);
+    private StringBuilder generateTostring(Node node, int detpth, StringBuilder res){
 
         if(node==null){
-            res.append("null\n");
+            res.append(generateDetpthString(detpth)+"null\n");
             return res;
         }
 
 
-        res.append(node.e.toString()+"\n");
+        res.append(generateDetpthString(detpth)+node.e.toString()+"\n");
 
-        toString(node.left,detpth+1,res);
+        generateTostring(node.left,detpth+1,res);
 
-        toString(node.right,detpth+1,res);
+        generateTostring(node.right,detpth+1,res);
 
         return res;
     }
 
-    private StringBuilder buildDetpth(int detpth){
+    //这个方法就是生成深度的前缀字符串
+    private StringBuilder generateDetpthString(int detpth){
         StringBuilder res =new StringBuilder();
         for (int i = 0; i < detpth; i++) {
             res.append("-");
@@ -113,15 +160,28 @@ public class BSTV4<E extends Comparable<E>> {
 
 
     public static void main(String[] args) {
-        BSTV4<Integer> bst=new BSTV4<Integer>();
+        BSTV6<Integer> bst=new BSTV6<Integer>();
         int[] nums={5,3,6,8,4,2};
         for (int num: nums) {
             bst.add(num);
         }
-        //bst.preOrder();
 
 
-        System.out.printf(bst.toString());
+        System.out.println(bst.toString());
+
+        System.out.println("----------------");
+
+        bst.preOrder();
+
+        System.out.println("----------------");
+
+        bst.inOrder();
+
+        System.out.println("----------------");
+
+        bst.afterOrder();
+
+
     }
 
 }
