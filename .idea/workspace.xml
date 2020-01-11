@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="274ecf69-6c6e-4d06-bf0a-5f4d1f0d9068" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BST/src/main/java/BSTV7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BST/src/main/java/BSTV8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BST/src/main/java/BSTV9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BST/target/classes/BSTV6.class" beforeDir="false" afterPath="$PROJECT_DIR$/BST/target/classes/BSTV6.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,35 +24,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="9" />
+          <entry key="java" value="10" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="9" />
+          <entry key="JAVA" value="10" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2676" />
+          <entry key="java" value="4058" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2676" />
+          <entry key="JAVA" value="4058" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BST/pom.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BST/src/main/java/BSTV1_Self.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -121,11 +114,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BST/src/main/java/BSTV7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="-138">
               <caret line="168" selection-start-line="168" selection-end-line="168" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BST/src/main/java/BSTV9.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="320" selection-start-line="320" selection-end-line="320" />
+              <folding>
+                <element signature="method#miniMun#1;class#BSTV9#0" />
+                <element signature="e#4470#4471#0" expanded="true" />
+                <element signature="e#4491#4492#0" expanded="true" />
+                <element signature="method#maxiMun#1;class#BSTV9#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -193,6 +201,7 @@
         <option value="$PROJECT_DIR$/BST/src/main/java/BSTV6.java" />
         <option value="$PROJECT_DIR$/BST/src/main/java/BSTV8.java" />
         <option value="$PROJECT_DIR$/BST/src/main/java/BSTV7.java" />
+        <option value="$PROJECT_DIR$/BST/src/main/java/BSTV9.java" />
       </list>
     </option>
   </component>
@@ -260,7 +269,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578751447685" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578754204782" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
@@ -280,14 +289,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BSTV8">
-    <configuration name="BSTV4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BSTV4" />
-      <module name="BST" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.BSTV9">
     <configuration name="BSTV5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BSTV5" />
       <module name="BST" />
@@ -316,20 +318,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BSTV9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BSTV9" />
+      <module name="BST" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.BSTV4" />
       <item itemvalue="Application.BSTV5" />
       <item itemvalue="Application.BSTV6" />
       <item itemvalue="Application.BSTV7" />
       <item itemvalue="Application.BSTV8" />
+      <item itemvalue="Application.BSTV9" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BSTV9" />
         <item itemvalue="Application.BSTV8" />
         <item itemvalue="Application.BSTV7" />
         <item itemvalue="Application.BSTV6" />
         <item itemvalue="Application.BSTV5" />
-        <item itemvalue="Application.BSTV4" />
       </list>
     </recent_temporary>
   </component>
@@ -350,7 +359,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16487935" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16487935" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -359,7 +368,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3617021" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.14468086" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -496,8 +505,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BST/src/main/java/BSTV7.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="-138">
           <caret line="168" selection-start-line="168" selection-end-line="168" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BST/src/main/java/BSTV9.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="320" selection-start-line="320" selection-end-line="320" />
+          <folding>
+            <element signature="method#miniMun#1;class#BSTV9#0" />
+            <element signature="e#4470#4471#0" expanded="true" />
+            <element signature="e#4491#4492#0" expanded="true" />
+            <element signature="method#maxiMun#1;class#BSTV9#0" />
+          </folding>
         </state>
       </provider>
     </entry>
