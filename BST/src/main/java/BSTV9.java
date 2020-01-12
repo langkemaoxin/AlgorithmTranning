@@ -1,6 +1,4 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class BSTV9<E extends Comparable<E>> {
     private class Node{
@@ -208,11 +206,13 @@ public class BSTV9<E extends Comparable<E>> {
 
 
     /**
-     * 获取最小值
+     * 寻找二分搜索树的最小元素
      * @return
      */
-    private Node miniMun(){
-        return miniMun(root);
+    private E miniMum(){
+        if(size==0)
+            throw new IllegalArgumentException("BST is Empty");
+        return miniMun(root).e;
     }
 
     private Node miniMun(Node node){
@@ -233,9 +233,9 @@ public class BSTV9<E extends Comparable<E>> {
      * 移除最小的值，并且返回这个最小的值
      * @return
      */
-    private Node removeMiniMun(){
-        Node miniNum=miniMun();
-        root=removeMiniMun(root);
+    public E removeMin(){
+        E miniNum= miniMum();
+        root= removeMin(root);
         return miniNum;
     }
 
@@ -244,11 +244,7 @@ public class BSTV9<E extends Comparable<E>> {
      * @param node
      * @return
      */
-    private Node removeMiniMun(Node node){
-        if(node==null){
-            throw new IllegalArgumentException();
-        }
-
+    private Node removeMin(Node node){
         /*
         * 如何做到移除节点的？
         * 我们不需要明显的去删除某一个节点
@@ -262,12 +258,17 @@ public class BSTV9<E extends Comparable<E>> {
             //保留当前的右子树
             Node right=node.right;
 
-            //释放内存
+            size--;
+
+            //既然需要删除当前节点，则需要删除当前节点的右子树
             node.right=null;
             return right;
         }
 
-        return removeMiniMun(node.left);
+        //如果当前的节点不是最小节点，那么需要继续往下找最小的节点
+        //把这个任务再一次进行，然后用当前的左子树进行接收
+        node.left= removeMin(node.left);
+        return node;
     }
 
 
@@ -275,8 +276,8 @@ public class BSTV9<E extends Comparable<E>> {
      * 获取最大值
      * @return
      */
-    private Node maxiMun(){
-        return maxiMun(root);
+    public E maxiMun(){
+        return maxiMun(root).e;
     }
 
     private Node maxiMun(Node node){
@@ -292,50 +293,64 @@ public class BSTV9<E extends Comparable<E>> {
     }
 
 
-    private Node removeMaxiMun(){
-        Node maxiMun=maxiMun();
+    /**
+     * 删除最大值
+     * @return
+     */
+    public E removeMax(){
+        E maxiMun=maxiMun();
 
         //递归的从根节点处理这个树  --> 小弟，我把删除最大值的这个事情交个你了，你自己去做，返回一个结果即可
-        root=removeMaxiMun(root);
+        root= removeMax(root);
         return maxiMun;
     }
 
-    private Node removeMaxiMun(Node node){
-        if(node==null){
-            throw  new IllegalArgumentException();
-        }
+    private Node removeMax(Node node){
 
         //当前右子树为空
         if(node.right==null){
             //返回左子树
             Node left=node.left;
 
-            //把左子树进行清空
+            size--;
+
+            //把当前节点的左子树清空
             node.left=null;
 
             //返回左子树
             return left;
         }
 
-        return removeMaxiMun(node);
+        node.right = removeMax(node.right);
+        return node;
     }
 
 
 
 
     public static void main(String[] args) {
-        BSTV9<Integer> bst=new BSTV9<Integer>();
-        int[] nums={5,3,6,8,4,2};
-        for (int num: nums) {
-            bst.add(num);
+        BSTV9<Integer> bst = new BSTV9<Integer>();
+        Random random = new Random();
+        int num=1000;
+        for (int i = 0; i < num; i++) {
+            bst.add(random.nextInt(10000));
         }
 
+        List<Integer> arrayList = new ArrayList<Integer>();
+        while (!bst.isEmpty()){
+            arrayList.add( bst.removeMin());
+        }
 
-        bst.leverOrder();
+        System.out.println(arrayList);
 
-        System.out.println("miniMun:"+bst.miniMun().e);
+        for (int i = 1; i < arrayList.size(); i++) {
+            if(arrayList.get(i-1)>arrayList.get(i)){
+                throw new IllegalArgumentException("Error");
+            }
 
-        System.out.println("maxiMun:"+bst.maxiMun().e);
+        }
+
+        System.out.println("Ok ");
 
     }
 
@@ -347,6 +362,20 @@ public class BSTV9<E extends Comparable<E>> {
  * 实现找到最大值
  * 实现remove最小值
  * 实现remove最大值
- *
+ * 测试removeMin
+ * 测试removeMax
  *
  */
+
+/**
+ * 教训：
+ * 1. 分析哪些方法是public的，哪些方法是private的
+ * 2. 返回Node的方法，或者是中间的方法，其实都是private方法
+ * 3. Node是内部的概念，是private的，是不能作为public去访问的
+ * 4. 每次都需要记得对于size的维护，++ 或者 --
+ * 5. 对于递归 root=removeMin(root) 不是用记代码的形式去写出来，而是确切的理解他的含义
+ *    含义就是：执行移除最小值的操作，并且返回根节点
+ *    只有确切理解如何执行递归，才能够实现递归
+ *
+ */
+
